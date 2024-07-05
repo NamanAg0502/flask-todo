@@ -1,0 +1,25 @@
+{% extends 'index.html' %} {% block title %}Task Master{% endblock %} {% block
+body %}
+<div class="flex flex-col space-y-5 w-2/3 mx-auto my-10">
+  <h1 class="text-3xl font-bold">Update Task</h1>
+  <form
+    action="/update/{{task.id}}"
+    method="post"
+    class="w-full flex items-center space-x-4"
+  >
+    <input
+      type="text"
+      name="content"
+      value="{{task.content}}"
+      id="content"
+      class="p-2 rounded border-none flex-1 focus:outline-black"
+    />
+    <button
+      type="submit"
+      class="px-4 py-2 bg-black rounded text-white font-semibold"
+    >
+      Update Task
+    </button>
+  </form>
+</div>
+{% endblock %}

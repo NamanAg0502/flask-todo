@@ -1,0 +1,55 @@
+{% extends 'index.html' %} {% block title %}Task Master{% endblock %} {% block
+body %}
+<div class="flex flex-col space-y-5 w-2/3 mx-auto my-10">
+  <h1 class="text-3xl font-bold">Task Master</h1>
+  <form action="/" method="post" class="w-full flex items-center space-x-4">
+    <input
+      type="text"
+      name="content"
+      id="content"
+      class="p-2 rounded border-none flex-1 focus:outline-black"
+    />
+    <button
+      type="submit"
+      class="px-4 py-2 bg-black rounded text-white font-semibold"
+    >
+      Add Task
+    </button>
+  </form>
+  {% if tasks|length < 1 %}
+  <h2 class="font-bold text-center text-red-500">
+    There are no tasks. Create one
+  </h2>
+  {% else %}
+  <div class="flex flex-col bg-white space-y-4 p-4 my-5">
+    <table class="">
+      <tr class="grid grid-cols-4">
+        <th class="col-span-2">Task</th>
+        <th class="">Added</th>
+        <th>Actions</th>
+      </tr>
+      <!-- Example row, replace with dynamic content -->
+      {% for task in tasks %}
+      <tr class="grid grid-cols-4">
+        <td class="col-span-2">{{task.content}}</td>
+        <td>{{task.date_created.date()}}</td>
+        <td class="flex items-center justify-evenly">
+          <a
+            href="/update/{{task.id}}"
+            class="border rounded border-black text-black px-2 py-1 text-xs"
+            >Update</a
+          >
+          <a
+            href="/delete/{{task.id}}"
+            class="border rounded border-red-500 text-red-500 px-2 py-1 text-xs"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+      <!-- End example row -->
+    </table>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
