@@ -11,6 +11,14 @@ Todo Master is a simple and efficient task management application built using Fl
 - **Delete Tasks**: Remove tasks that are no longer needed.
 - **Responsive Design**: Accessible on both desktop and mobile devices.
 
+## Screenshots
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="docs/screenshot1.png" alt="Screenshot 1" style="width: 30%; height: auto;">
+  <img src="docs/screenshot2.png" alt="Screenshot 2" style="width: 30%; height: auto;">
+  <img src="docs/screenshot3.png" alt="Screenshot 3" style="width: 30%; height: auto;">
+</div>
+
 ## Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
